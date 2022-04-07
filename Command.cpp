@@ -26,6 +26,7 @@ string Command::getSecondWord() {
 	return this->secondWord;
 }
 
+
 /**
  * Return true if this command was not understood.
  */

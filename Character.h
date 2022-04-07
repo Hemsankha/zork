@@ -1,4 +1,4 @@
-/*#ifndef CHARACTER_H_
+#ifndef CHARACTER_H_
 #define CHARACTER_H_
 #include "ZorkUL.h"
 
@@ -22,6 +22,23 @@ public:
 	Character(string description);
 	string shortDescription();
 	string longDescription();
+
+};
+
+class Characterx{
+private:
+    string description;
+    vector < Item > itemsInCharacter;
+public:
+   void addItem(Item &Item);
+   void addItems(Item *item);
+
+
+public:
+   Characterx(string Description);
+   string shortDescription();
+   string longDescription();
+
 
 };
 

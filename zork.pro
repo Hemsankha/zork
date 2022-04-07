@@ -12,7 +12,8 @@ HEADERS = \
    $$PWD/item.h \
    $$PWD/Parser.h \
    $$PWD/Room.h \
-   $$PWD/ZorkUL.h
+   $$PWD/ZorkUL.h \
+   wordle.h
 
 SOURCES = \
    $$PWD/Character.cpp \
@@ -21,7 +22,8 @@ SOURCES = \
    $$PWD/item.cpp \
    $$PWD/Parser.cpp \
    $$PWD/Room.cpp \
-   $$PWD/ZorkUL.cpp
+   $$PWD/ZorkUL.cpp \
+   wordle.cpp
 
 INCLUDEPATH = \
     $$PWD/.
