@@ -4,6 +4,7 @@
 #include <string>
 
 #define numWords 5
+using namespace x;
 
 string wordList[numWords];
 string input;
@@ -11,12 +12,11 @@ string txtFile;
 vector<string> singleWord;
 vector<string> singleWordInput;
 
-wordle::wordle(string txt)
+wordle::wordle()
 {
-string txtFile = txt;
+string txtFile = "wordle.txt.txt";
 input = " ";
 }
-
 
 void wordle::reader()
 {

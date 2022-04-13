@@ -19,6 +19,9 @@ public:
     Item (string description);
 	string getShortDescription();
     string getLongDescription();
+
+
+
 	int getWeight();
 	void setWeight(int weightGrams);
 	float getValue();
@@ -26,5 +29,7 @@ public:
 	int getWeaponCheck();
 	void setWeaponCheck(int weaponCheck);
 };
+
+
 
 #endif /*ITEM_H_*/

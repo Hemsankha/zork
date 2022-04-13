@@ -3,6 +3,9 @@
 using namespace std;
 #include "ZorkUL.h"
 
+
+Room* ptr[9];
+
 int main(int argc, char *argv[]) {
 	ZorkUL temp;
 	temp.play();
@@ -11,13 +14,16 @@ int main(int argc, char *argv[]) {
 
 ZorkUL::ZorkUL() {
 
+    x::wordle();
 	createRooms();
 
 }
 
+
+
 void ZorkUL::createRooms()  {
 
-    Room *ptr[9];
+
 
 
     ptr[0] = new Room("""a");
@@ -47,6 +53,7 @@ void ZorkUL::createRooms()  {
     ptr[8]->setExits(NULL, ptr[3], NULL, NULL);
 
         currentRoom = ptr[0];
+
 }
 
 /**
@@ -138,11 +145,21 @@ void ZorkUL::printHelp() {
 
 }
 
+
+
+
+
 void ZorkUL::goRoom(Command command) {
 	if (!command.hasSecondWord()) {
 		cout << "incomplete input"<< endl;
 		return;
 	}
+    string word;
+    cout<<"Enter word in format Word ... \n"<<endl;
+    cin>>word;
+    int checker = game(word);
+     if(checker = 1)
+    {
 
 	string direction = command.getSecondWord();
 
@@ -155,28 +172,55 @@ void ZorkUL::goRoom(Command command) {
 		currentRoom = nextRoom;
 		cout << currentRoom->longDescription() << endl;
 	}
+ }
 }
- void ZorkUL::teleport (Command command)
+ inline void ZorkUL::teleport(Command command)
 {
-
-     if(!command.hasSecondWord())
+     string s = command.getSecondWord();
+     if(s.compare("east")||s.compare("west")||s.compare("north")||s.compare("south"))
      {
-         cout<<"Incomplete Input"<<endl;
-         return;
+         this->goRoom(command);
      }
-    string direction = command.getSecondWord();
-    Room* nextRoom = currentRoom->nextRoom(direction);
-
-    currentRoom = nextRoom;
-    cout<<currentRoom->longDescription()<< endl;
-
-
-
-
-    //Room* nextRoom = currentRoom->nextRoom(direction);
-    //currentRoom = nextRoom;
-    //return currentRoom->longDescription();
+     else if(s.compare("a"))
+     {
+         currentRoom = ptr[0];
+     }
+     else if(s.compare("b"))
+    {
+         currentRoom = ptr[1];
+     }
+     else if(s.compare("c"))
+     {
+         currentRoom = ptr[2];
+     }
+     else if(s.compare("d"))
+     {
+         currentRoom = ptr[3];
+     }
+     else if(s.compare("e"))
+     {
+         currentRoom = ptr[4];
+     }
+     else if(s.compare("f"))
+     {
+         currentRoom = ptr[5];
+     }
+     else if(s.compare("g"))
+     {
+         currentRoom = ptr[6];
+     }
+     else if(s.compare("h"))
+     {
+         currentRoom = ptr[7];
+     }
+     else if(s.compare("i"))
+     {
+         currentRoom = ptr[8];
+     }
+     cout<<currentRoom->longDescription()<< endl;
 }
+
+
 
 string ZorkUL::go(string direction) {
 	//Make the direction lowercase
