@@ -19,7 +19,7 @@ private:
 	void printWelcome();
 	bool processCommand(Command command);
 	void printHelp();
-	void goRoom(Command command);
+    void goRoom(Command command);
     void createItems();
     void displayItems();
 
